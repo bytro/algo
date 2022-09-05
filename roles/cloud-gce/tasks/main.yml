@@ -9,7 +9,7 @@
   gcp_compute_network:
     auth_kind: serviceaccount
     service_account_file: "{{ credentials_file_path }}"
-    project: "{{ project_id }}"
+    project: "{{ host_network_project_id }}"
     name: algovpn
     auto_create_subnetworks: true
     routing_config:
@@ -20,7 +20,7 @@
   gcp_compute_firewall:
     auth_kind: serviceaccount
     service_account_file: "{{ credentials_file_path }}"
-    project: "{{ project_id }}"
+    project: "{{ host_network_project_id }}"
     name: algovpn
     network: "{{ gcp_compute_network }}"
     direction: INGRESS
